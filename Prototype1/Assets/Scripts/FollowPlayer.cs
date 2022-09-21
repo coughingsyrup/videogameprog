@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController1 : MonoBehaviour
+public class FollowPlayer : MonoBehaviour
 {
-public float speed = 5.0f;
+public GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,7 @@ public float speed = 5.0f;
     // Update is called once per frame
     void Update()
     {
-
-       transform.Translate(Vector3.forward * Time.deltaTime * speed); 
+        //Offset the camera behind the player by adding to the player's postition
+     transform.position = player.transform.position + new Vector3(0, 10, -7);   
     }
 }
